@@ -124,7 +124,7 @@ namespace StopTheClip
                 ClipManagerSetNearClip();
 
         }
-        private void OnLogout()
+        private void OnLogout(int type, int code)
         {
             //----
             // Sets the lengths of the TargetSystem to 0 as they keep their size
