@@ -5,7 +5,7 @@
     <Version>0.0.1.1</Version>
     <Description>StopTheClip</Description>
     <Copyright></Copyright>
-	<PackageProjectUrl></PackageProjectUrl>
+	<PackageProjectUrl>https://github.com/astrodoobs/StopTheClip</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup>

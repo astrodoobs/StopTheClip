@@ -172,27 +172,30 @@ namespace StopTheClip
             if (isEnabled)
                 inCutscene = Condition![ConditionFlag.OccupiedInCutSceneEvent] || Condition![ConditionFlag.WatchingCutscene] || Condition![ConditionFlag.WatchingCutscene78];
         }
-        
 
         private void ClipManagerSetNearClip()
         {
             //----
-            // Set the near clip
+            // Set the near clip and adjust the camera's forward offset
             //----
             if (csCameraManager != null && csCameraManager->ActiveCameraIndex == 0 && csCameraManager->GameCamera != null)
+            {
                 csCameraManager->GameCamera->Camera.BufferData->NearClip = 0.05f;
+                csCameraManager->GameCamera->Camera.Position.Z += 0.1f; // Adjust the forward offset
+            }
         }
 
         private void ClipManagerResetNearClip()
         {
             //----
-            // Set the near clip
+            // Reset the near clip and camera's forward offset
             //----
             if (csCameraManager != null && csCameraManager->ActiveCameraIndex == 0 && csCameraManager->GameCamera != null)
+            {
                 csCameraManager->GameCamera->Camera.BufferData->NearClip = 0.1f;
+                csCameraManager->GameCamera->Camera.Position.Z -= 0.1f; // Reset the forward offset
+            }
         }
-
-
 
         private static class Signatures
         {
